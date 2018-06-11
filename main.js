@@ -35,6 +35,7 @@ function bodyTriggered(e) {
       sludge.classList.add("hidden");
       plunger.classList.add("down");
       coffee.classList.remove("hidden");
+      aeropress.classList.add("down");
       break;
     default:
       break;

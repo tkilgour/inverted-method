@@ -1,3 +1,7 @@
+html {
+  height: 110%;
+}
+
 body {
   padding-bottom: 4em;
 }
@@ -8,7 +12,7 @@ h1 {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-  margin-top: 2em;
+  margin: 1.5em 0;
 }
 
 h1 > .small-heading {
@@ -29,10 +33,14 @@ p {
 }
 
 .aeropress {
-  margin: 7em auto 0 auto;
+  margin: 6em auto 0 auto;
   width: 104px;
   height: 400px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.aeropress.down {
+  height: 240px;
 }
 
 .aeropress.invert {
