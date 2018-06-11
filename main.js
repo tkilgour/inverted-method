@@ -9,7 +9,10 @@ document.querySelector(".aeropress").addEventListener(
 );
 
 function bodyTriggered(e) {
+  var aeropress = document.querySelector(".aeropress");
   var grounds = document.querySelector(".coffee-grounds");
+  var sludge = document.querySelector(".coffee-sludge");
+  var heat = document.querySelector(".heat-lines");
 
   switch (step) {
     case 0:
@@ -17,6 +20,12 @@ function bodyTriggered(e) {
       break;
     case 1:
       grounds.classList.add("hidden");
+      sludge.classList.remove("hidden");
+      heat.classList.remove("offscreen");
+      break;
+    case 2:
+      aeropress.classList.add("invert");
+      heat.classList.add("offscreen");
       break;
     default:
       break;

@@ -4,8 +4,11 @@ h1 {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-  line-height: 23px;
   margin-top: 2em;
+}
+
+h1 > .small-heading {
+  font-size: 0.6em;
 }
 
 p {
@@ -22,10 +25,14 @@ p {
 }
 
 .aeropress {
-  margin: 5em auto;
+  margin: 7em auto 0 auto;
   width: 104px;
   height: 400px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.aeropress.invert {
+  transform: rotate(180deg);
 }
 
 .aeropress .chamber {
@@ -47,11 +54,52 @@ p {
   border-radius: 4px;
 }
 
-.coffee-grounds {
+.aeropress .coffee-grounds {
   position: absolute;
   width: 102px;
   bottom: 38px;
   height: 50px;
+  left: -1px;
+  z-index: -1;
+}
+
+.aeropress .heat-lines:before {
+  content: "";
+  position: absolute;
+  border: 1px solid #333;
+  top: 10px;
+  left: -30px;
+  width: 0px;
+  height: 40px;
+  transform: rotate(-10deg);
+}
+
+.aeropress .heat-lines {
+  position: absolute;
+  border: 1px solid #333;
+  top: -80px;
+  left: 50px;
+  width: 0px;
+  height: 50px;
+}
+
+.aeropress .heat-lines:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #333;
+  top: 10px;
+  left: 30px;
+  width: 0px;
+  height: 40px;
+  transform: rotate(10deg);
+}
+
+.aeropress .coffee-sludge {
+  position: absolute;
+  background-color: #563821;
+  width: 102px;
+  bottom: 38px;
+  height: 162px;
   left: -1px;
   z-index: -1;
 }
@@ -90,6 +138,10 @@ p {
 
 .hidden {
   display: none;
+}
+
+.offscreen {
+  left: 9999px !important;
 }
 
 @media (max-width: 640px) {
