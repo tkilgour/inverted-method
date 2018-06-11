@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Inverted Method</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+  <h1 class="text-center">INVERTED METHOD</h1>
+  <div class="aeropress">
+    <div class="chamber">
+      <svg class="coffee-grounds hidden">
+        <defs>
+          <filter id="filter" height="1.4" width="1.4">
+            <feTurbulence baseFrequency="0.5" numOctaves="3" type="fractalNoise" result="result1" />
+            <feDisplacementMap in2="result1" scale="20" result="result2" xChannelSelector="R" in="SourceGraphic" />
+            <feComposite in2="result2" in="SourceGraphic" operator="atop" result="fbSourceGraphic" />
+          </filter>
+        </defs>
+        <rect fill="#5b3920" filter="url(#filter)" width="200" height="100" x="-50" y="0" />
+      </svg>
+      <div class="plunger"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
