@@ -12,7 +12,7 @@ h1 {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-  margin: 1.5em 0;
+  margin-top: 1.5em;
 }
 
 h1 > .small-heading {
@@ -40,11 +40,21 @@ p {
 }
 
 .aeropress.down {
+  transition: height 1000ms;
   height: 240px;
 }
 
 .aeropress.invert {
   transform: rotate(180deg);
+  margin-top: 1em;
+}
+
+.aeropress.invert:not(.down) {
+  transition: transform 1000ms;
+}
+
+.aeropress.invert .coffee-sludge {
+  top: 0;
 }
 
 .aeropress .chamber {
@@ -67,6 +77,9 @@ p {
 }
 
 .aeropress .coffee-grounds {
+  transition: opacity 300ms ease, visibility 300ms ease;
+  visibility: visible;
+  opacity: 100;
   position: absolute;
   width: 102px;
   bottom: 38px;
@@ -87,6 +100,10 @@ p {
 }
 
 .aeropress .heat-lines {
+  transition: opacity 1000ms ease, visibility 1000ms ease;
+  visibility: visible;
+  opacity: 100;
+  content: "";
   position: absolute;
   border: 1px solid #333;
   top: -80px;
@@ -107,6 +124,11 @@ p {
 }
 
 .aeropress .coffee-sludge {
+  overflow-y: hidden;
+	max-height: 162px; /* approximate max height */
+	transition-property: all;
+	transition-duration: 1000ms;
+  
   position: absolute;
   background-color: #563821;
   width: 102px;
@@ -123,11 +145,12 @@ p {
   width: 80px;
   height: 200px;
   left: 8px;
-  top: 190px;
+  top: 189px;
 }
 
 .aeropress .plunger.down {
   top: 28px;
+  transition: top 1000ms;
 }
 
 .aeropress .plunger:before {
@@ -153,6 +176,9 @@ p {
 }
 
 .cup-wpr {
+  transition: opacity 300ms ease, visibility 300ms ease;
+  visibility: visible;
+  opacity: 100;
   margin: 0 auto;
   margin-top: 9px;
   width: 130px;
@@ -192,26 +218,39 @@ p {
 }
 
 .coffee {
+  overflow-y: hidden;
+	max-height: 110px; /* approximate max height */
+	transition-property: all;
+	transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  
   position: absolute;
   background-color: #563821;
   left: -2px;
-  top: 22px;
+  bottom: 0;
   width: 130px;
   height: 110px;
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
 }
 
-.hidden {
-  display: none;
+.reset-wpr {
+  margin: 1em 0;
+  text-align: center;
 }
 
-.offscreen {
-  left: 9999px !important;
+.hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.hidden-slider {
+  max-height: 0 !important;
 }
 
 @media (max-width: 640px) {
   h1 {
     font-size: 1.8em;
+    margin-top: 1em;
   }
 }

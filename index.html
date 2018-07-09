@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Inverted Method</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inverted Method</title>
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 
@@ -16,23 +16,26 @@
       <svg class="coffee-grounds hidden">
         <defs>
           <filter id="filter" height="1.4" width="1.4">
-            <feTurbulence baseFrequency="0.5" numOctaves="3" type="fractalNoise" result="result1" />
-            <feDisplacementMap in2="result1" scale="20" result="result2" xChannelSelector="R" in="SourceGraphic" />
+            <feTurbulence baseFrequency="1.5" numOctaves="3" type="fractalNoise" result="result1" />
+            <feDisplacementMap in2="result1" scale="25" result="result2" xChannelSelector="R" in="SourceGraphic" />
             <feComposite in2="result2" in="SourceGraphic" operator="atop" result="fbSourceGraphic" />
           </filter>
         </defs>
         <rect fill="#734e31" filter="url(#filter)" width="200" height="100" x="-50" y="0" />
       </svg>
-      <div class="heat-lines offscreen"></div>
-      <div class="coffee-sludge hidden"></div>
+      <div class="heat-lines hidden"></div>
+      <div class="coffee-sludge hidden-slider"></div>
       <div class="plunger"></div>
     </div>
   </div>
-  <div class="cup-wpr">
-    <div class="cup hidden">
-      <div class="coffee hidden"></div>
+  <div class="cup-wpr hidden">
+    <div class="cup">
+      <div class="coffee hidden-slider"></div>
     </div>
   </div>
+  <!-- <div class="reset-wpr">
+    <button class="handleReset">Reset</button>
+  </div> -->
   <script src="main.js"></script>
 </body>
 
