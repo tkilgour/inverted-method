@@ -1,8 +1,8 @@
-var step = 0;
+var step = 1;
 var proceed = true;
 
 
-document.querySelector(".aeropress").addEventListener(
+document.querySelector("html").addEventListener(
   "click",
   function(e) {
     if (proceed) bodyTriggered(e);
@@ -14,7 +14,7 @@ document.querySelector(".aeropress").addEventListener(
   false
 );
 
-
+var start = document.querySelector(".start");
 var aeropress = document.querySelector(".aeropress");
 var plunger = document.querySelector(".plunger");
 var grounds = document.querySelector(".coffee-grounds");
@@ -23,48 +23,52 @@ var heat = document.querySelector(".heat-lines");
 var cup = document.querySelector(".cup-wpr");
 var coffee = document.querySelector(".coffee");
 
-function bodyTriggered(e) {
+function bodyTriggered() {
   switch (step) {
-    case 0:
-    grounds.classList.remove("hidden");
-    break;
     case 1:
-    sludge.classList.remove("hidden-slider");
-    grounds.classList.add("hidden");
-    heat.classList.remove("hidden");
-    break;
+      start.classList.add("display-none");
+      aeropress.classList.remove("hidden");
+      break;
     case 2:
-    aeropress.classList.add("invert");
-    heat.remove();
-    cup.classList.remove("hidden");
-    break;
+      grounds.classList.remove("hidden");
+      break;
     case 3:
-    sludge.classList.add("hidden-slider");
-    plunger.classList.add("down");
-    coffee.classList.remove("hidden-slider");
-    aeropress.classList.add("down");
-    break;
+      sludge.classList.remove("hidden-slider");
+      grounds.classList.add("hidden");
+      heat.classList.remove("hidden");
+      break;
+    case 4:
+      aeropress.classList.add("invert");
+      heat.remove();
+      cup.classList.remove("hidden");
+      break;
+    case 5:
+      sludge.classList.add("hidden-slider");
+      plunger.classList.add("down");
+      coffee.classList.remove("hidden-slider");
+      aeropress.classList.add("down");
+      break;
     default:
-    break;
+      break;
   }
   
   step++;
 }
 
-function reset(e) {
-  e.preventDefault();
+// function reset(e) {
+//   e.preventDefault();
   
-  aeropress.classList.remove("down");
-  aeropress.classList.remove("invert");
-  grounds.classList.add("hidden");
-  sludge.classList.add("hidden-slider");
-  heat.classList.add("hidden");
-  plunger.classList.remove("down");
-  cup.classList.add("hidden");
-  coffee.classList.add("hidden-slider");
+//   aeropress.classList.remove("down");
+//   aeropress.classList.remove("invert");
+//   grounds.classList.add("hidden");
+//   sludge.classList.add("hidden-slider");
+//   heat.classList.add("hidden");
+//   plunger.classList.remove("down");
+//   cup.classList.add("hidden");
+//   coffee.classList.add("hidden-slider");
   
-  step = 0;
-}
+//   step = 1;
+// }
 
 // document.querySelector(".handleReset").addEventListener(
 //   "click",
