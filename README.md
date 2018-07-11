@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="300" src="inverted-method.png"/>
+</p>
+
 # The Inverted Method
 
 A simple single serving site for the Aeropress inverted coffee brewing method. Built with no dependencies and illustrated with pure CSS goodness.
