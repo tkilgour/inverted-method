@@ -1,5 +1,7 @@
 <p align="center">
-  <img width="300" src="inverted-method.png"/>
+  <a href="https://tkilgour.github.io/inverted-method/">
+    <img width="300" src="inverted-method.png"/>
+  </a>
 </p>
 
 # The Inverted Method
