@@ -2,17 +2,16 @@ var step = 1;
 var proceed = true;
 
 
-document.querySelector("html").addEventListener(
-  "click",
-  function(e) {
-    if (proceed) bodyTriggered(e);
-    proceed = false
-    setTimeout(function() {
-      proceed = true
-    }, 500);
-  },
-  false
-);
+function handleClick(e) {
+  if (proceed) bodyTriggered(e);
+  proceed = false
+  setTimeout(function() {
+    proceed = true
+  }, 500);
+}
+
+document.querySelector("html").addEventListener("touchstart", handleClick, false);
+document.querySelector("html").addEventListener("click", handleClick, false);
 
 var start = document.querySelector(".start");
 var aeropress = document.querySelector(".aeropress");
