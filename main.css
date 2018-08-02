@@ -83,6 +83,11 @@ p {
   height: 50px;
   left: -1px;
   z-index: -1;
+  background-size: 2px 2px;
+  background-image: linear-gradient( 45deg, #563821 25%, transparent 25%, transparent),
+                    linear-gradient(-45deg, #563821 25%, transparent 25%, transparent),
+                    linear-gradient( 45deg, transparent 75%, #563821 75%),
+                    linear-gradient(-45deg, transparent 75%, #563821 75%)
 }
 
 .aeropress .heat-lines:before {
