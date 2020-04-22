@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://tkilgour.github.io/inverted-method/">
+  <a href="https://invertedaero.press">
     <img width="300" src="inverted-method.png"/>
   </a>
 </p>
 
-# [The Inverted Method](https://tkilgour.github.io/inverted-method/)
+# [The Inverted Method](https://invertedaero.press)
 
 > A simple single serving site for the Aeropress inverted coffee brewing method.
 
