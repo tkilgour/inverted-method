@@ -28,6 +28,22 @@ p {
 	line-height: 23px;
 }
 
+.credits {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-left: 30px;
+}
+
+.credits p:nth-child(1) {
+  margin-top: 50px;
+}
+
+.credits .icon {
+  position: absolute;
+  left: 0;
+}
+
 .aeropress {
   transition: opacity 1000ms ease, visibility 1000ms ease;
   margin: 6em auto 0 auto;
@@ -47,7 +63,7 @@ p {
 }
 
 .aeropress.invert:not(.down) {
-  transition: transform 1000ms;
+  transition: transform 1000ms ease;
 }
 
 .aeropress.invert .coffee-sludge {
@@ -90,7 +106,14 @@ p {
                     linear-gradient(-45deg, transparent 75%, #563821 75%)
 }
 
-.aeropress .heat-lines:before {
+.text {
+  position: absolute;
+  left: 120px;
+  width: 250px;
+  margin-top: 0;
+}
+
+.heat-lines:before {
   content: "";
   position: absolute;
   border: 1px solid #333;
@@ -101,7 +124,7 @@ p {
   transform: rotate(-10deg);
 }
 
-.aeropress .heat-lines {
+.heat-lines {
   transition: opacity 1000ms ease, visibility 1000ms ease;
   visibility: visible;
   opacity: 100;
@@ -114,7 +137,7 @@ p {
   height: 50px;
 }
 
-.aeropress .heat-lines:after {
+.heat-lines:after {
   content: "";
   position: absolute;
   border: 1px solid #333;
@@ -126,7 +149,7 @@ p {
 }
 
 .aeropress .coffee-sludge {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 	max-height: 162px; /* approximate max height */
 	transition-property: all;
 	transition-duration: 1000ms;
@@ -185,6 +208,11 @@ p {
   margin-top: 9px;
   width: 130px;
   height: 130px;
+  position: relative;
+}
+
+.cup-wpr .heat-lines {
+  left: 62px;
 }
 
 .cup {
@@ -240,9 +268,23 @@ p {
   text-align: center;
 }
 
+.shrink {
+  transform: scale(0.8) translate(-300px, 48px);
+  transition: transform 800ms ease;
+}
+
 .reset-wpr {
-  margin: 1em 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
   text-align: center;
+}
+
+.handleReset {
+  padding: 10px;
+  font-size: 0.8em;
+  text-transform: uppercase;
 }
 
 .display-none {
@@ -254,6 +296,20 @@ p {
   opacity: 0 !important;
 }
 
+.no-height {
+  height: 0;
+}
+
+.hidden-fade {
+  transition: opacity 200ms ease, visibility 200ms ease !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.skip {
+  transition: opacity 200ms ease, visibility 200ms ease !important;
+}
+
 .hidden-slider {
   max-height: 0 !important;
 }
@@ -263,6 +319,7 @@ p {
 }
 
 .pulsate {
+  margin-top: 50px;
   animation: pulsate 2.5s ease-out;
   animation-iteration-count: infinite;
   -webkit-animation: pulsate 2.5s ease-out;
@@ -298,6 +355,15 @@ p {
   h1 {
     font-size: 1.5em;
     margin-top: 1em;
+  }
+
+  .credits {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  .shrink {
+    transform: scale(0.8) translate(-100px, 48px);
   }
 
   .mobile-only {

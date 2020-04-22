@@ -1,5 +1,6 @@
 var step = 1;
 var proceed = true;
+var countdown;
 
 
 function handleClick(e) {
@@ -14,13 +15,19 @@ document.querySelector("html").addEventListener("touchstart", handleClick, false
 document.querySelector("html").addEventListener("click", handleClick, false);
 
 var start = document.querySelector(".start");
+var wpr = document.querySelector(".animation-wpr")
 var aeropress = document.querySelector(".aeropress");
 var plunger = document.querySelector(".plunger");
 var grounds = document.querySelector(".coffee-grounds");
 var sludge = document.querySelector(".coffee-sludge");
-var heat = document.querySelector(".heat-lines");
+var sludgeText = document.querySelector(".coffee-sludge .text");
+var timer = document.querySelector(".timer");
+var skip = document.querySelector(".skip");
+var aeroHeat = document.querySelector(".aeropress .heat-lines");
 var cup = document.querySelector(".cup-wpr");
+var cupHeat = document.querySelector(".cup-wpr .heat-lines");
 var coffee = document.querySelector(".coffee");
+var credits = document.querySelector(".credits");
 
 function bodyTriggered() {
   switch (step) {
@@ -33,12 +40,16 @@ function bodyTriggered() {
       break;
     case 3:
       sludge.classList.remove("hidden-slider");
+      sludgeText.classList.remove("hidden");
+      startTimer();
       grounds.classList.add("hidden");
-      heat.classList.remove("hidden");
+      aeroHeat.classList.remove("hidden");
       break;
     case 4:
+      clearInterval(countdown);
+      sludgeText.classList.add("hidden");
       aeropress.classList.add("invert");
-      heat.remove();
+      aeroHeat.remove();
       cup.classList.remove("hidden");
       break;
     case 5:
@@ -47,6 +58,11 @@ function bodyTriggered() {
       coffee.classList.remove("hidden-slider");
       aeropress.classList.add("down");
       break;
+    case 6:
+      wpr.classList.add("shrink");
+      cupHeat.classList.remove("hidden");
+      aeropress.classList.add("hidden-fade");
+      credits.classList.remove("hidden");
     default:
       break;
   }
@@ -54,25 +70,17 @@ function bodyTriggered() {
   step++;
 }
 
-// function reset(e) {
-//   e.preventDefault();
-  
-//   aeropress.classList.remove("down");
-//   aeropress.classList.remove("invert");
-//   grounds.classList.add("hidden");
-//   sludge.classList.add("hidden-slider");
-//   heat.classList.add("hidden");
-//   plunger.classList.remove("down");
-//   cup.classList.add("hidden");
-//   coffee.classList.add("hidden-slider");
-  
-//   step = 1;
-// }
-
-// document.querySelector(".handleReset").addEventListener(
-//   "click",
-//   function(e) {
-//     reset(e);
-//   },
-//   false
-// );
+function startTimer() {
+  var skipTracker = 0;
+  countdown = setInterval(() => {
+    skipTracker++;
+    timer.innerText = Number(timer.innerText) - 1;
+    if (timer.innerText === "0") {
+      timerInstructions.innerText = "Flip!";
+      clearInterval(countdown);
+    }
+    if (skipTracker === 4) {
+      skip.classList.remove("hidden");
+    }
+  }, 1000);
+}
