@@ -6,8 +6,10 @@
 
 # [The Inverted Method](https://tkilgour.github.io/inverted-method/)
 
-A simple single serving site for the Aeropress inverted coffee brewing method. 
+> A simple single serving site for the Aeropress inverted coffee brewing method.
 
-Built with zero dependencies and illustrated with pure CSS.
+✍🏼 All illustrations and animations created *exclusively* with CSS (no SVGs or PNGs were harmed in the creation of this site). Technique inspired by [CSS icon](https://cssicon.space/) by Wentin Zhang.
 
-Inspired by Wentin Zhang's [talk](https://www.youtube.com/watch?v=Y0_FMCji3iE) about how she draws with CSS.
+💻 No third-party libraries were used (nope, not even jQuery).
+
+🙏🏼 Thanks for taking the time to look at this!
