@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# [The Inverted Method](https://invertedaero.press)
+# [The Inverted Method](https://inverted-method.kilgour.co/)
 
 > A simple single serving site for the Aeropress inverted coffee brewing method.
 
